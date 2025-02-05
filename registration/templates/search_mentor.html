@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Mentor</title>
+</head>
+<body>
+    <h1>Kolej Professional MARA Indera Mahkota</h1>
+    <strong>Search Mentor</strong><br><br>
+    <form action="" method="get">
+        Enter Mentor: <input type="text" name="m_code">
+        <input type="submit" value="SEARCH">
+    </form>
+    <p>{{message}}</p>
+    <br><br>
+    <table border="1">
+        <tr>
+            <th>Mentor Code</th>
+            <th>Mentor Name</th>
+            <th>Mentor Email</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{ x.mentorCd }}</td>
+            <td>{{ x.mentorName }}</td>
+            <td>{{ x.mentorEmail }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <a href="{% url 'index' %}" class="btn">Return to Registration Page</a>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPMIM Registration</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #004080; /* Dark blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .container {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #0073e6; /* Bright blue */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #005bb5; /* Darker blue */
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Kolej Professional MARA Indera Mahkota</h1>
+    </header>
+    <center>
+        {% with firstname="Mohamad Zaiful" %}
+        <h1>Hello {{myname}}, how are you?</h1>
+        <h1>My Mother's name is {{mothername}}</h1>
+        <h1>My Father's name is {{fathername}}</h1>
+        {% endwith %}
+
+        {% if greeting == 1 %}
+            <h1>Hello</h1>
+        {% endif %}
+    </center>  
+
+    <div class="container">
+        <p>You are now on KPMIM's Registration Page. Please click the button below to proceed with your registration.</p>
+        <a href="{% url 'course' %}" class="btn">Course</a>
+        <a href="{% url 'mentor' %}" class="btn">Mentor</a>
+        <a href="{% url 'search_course' %}" class="btn">Search Course</a>
+        <a href="{% url 'search_mentor' %}" class="btn">Search Mentor</a>
+
+        <div class="image-container">
+            <img src="{% static 'gambar1.jpg' %}" alt="Campus View">
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Kolej Professional MARA Indera Mahkota. All rights reserved.
+    </footer>
+</body>
+</html>
